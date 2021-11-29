@@ -22,7 +22,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 프로젝트에 연결된 DB의 넘버링 전략을 따라간다. ex) auto_increment
     private int id; // sequence, auto_increment
 
-    @Column(nullable = false, length = 30) // Notnull
+    @Column(nullable = false, length = 30, unique = true) // Notnull
     private String username;
 
     @Column(nullable = false,length = 100) // 넉넉하게 주는 이유는 hash로 암호화 하기 때문에
@@ -32,7 +32,7 @@ public class User {
     @Enumerated(EnumType.STRING) // DB에는 RolType이라는게 없어서 String 이라고 알려 준다.
     private RoleType role; // Enum을 쓰는게 맞음, admin , user, mannger 권한을 주려고할때 오타가 날수있기때문임.
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String email;
 
     @CreationTimestamp // 시간 자동입력
