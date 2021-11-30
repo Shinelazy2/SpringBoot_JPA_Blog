@@ -51,8 +51,8 @@ public class DummyController {
             return new IllegalArgumentException("수정에 실패하였습니다.");
         });
 
-        user.setPassword(requestUser.getPassword());
-        user.setEmail((requestUser.getEmail()));
+//        user.setPassword(requestUser.getPassword());
+//        user.setEmail((requestUser.getEmail()));
         //update할때는 save를 잘 쓰지 않는다.
 //        userRepository.save(user);
 
